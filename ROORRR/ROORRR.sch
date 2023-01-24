@@ -1,4 +1,5 @@
 EESchema Schematic File Version 4
+LIBS:ROORRR-cache
 EELAYER 30 0
 EELAYER END
 $Descr A4 11693 8268
@@ -14,17 +15,6 @@ Comment3 ""
 Comment4 ""
 $EndDescr
 $Comp
-L MCU_Microchip_ATmega:ATmega32U4-AU U1
-U 1 1 63CAD9B8
-P 2800 3450
-F 0 "U1" H 2800 1561 50  0000 C CNN
-F 1 "ATmega32U4-AU" H 2800 1470 50  0000 C CNN
-F 2 "Package_QFP:TQFP-44_10x10mm_P0.8mm" H 2800 3450 50  0001 C CIN
-F 3 "http://ww1.microchip.com/downloads/en/DeviceDoc/Atmel-7766-8-bit-AVR-ATmega16U4-32U4_Datasheet.pdf" H 2800 3450 50  0001 C CNN
-	1    2800 3450
-	1    0    0    -1  
-$EndComp
-$Comp
 L power:+5V #PWR0101
 U 1 1 63CAF8DC
 P 2700 1450
@@ -38,12 +28,8 @@ $EndComp
 Wire Wire Line
 	2700 1450 2700 1550
 Wire Wire Line
-	2800 1650 2800 1550
-Wire Wire Line
 	2800 1550 2700 1550
 Connection ~ 2700 1550
-Wire Wire Line
-	2700 1550 2700 1650
 $Comp
 L power:GND #PWR0102
 U 1 1 63CB005F
@@ -68,8 +54,6 @@ F 3 "~" H 3750 4050 50  0001 C CNN
 $EndComp
 Wire Wire Line
 	4100 4050 3850 4050
-Wire Wire Line
-	3650 4050 3400 4050
 $Comp
 L Device:C_Small C3
 U 1 1 63CB356B
@@ -94,68 +78,34 @@ F 3 "" H 1950 3550 50  0001 C CNN
 $EndComp
 Wire Wire Line
 	1950 3550 1950 3450
-Wire Wire Line
-	1950 3250 2200 3250
-$Comp
-L Device:C_Small C4
-U 1 1 63CB4970
-P 1250 4150
-F 0 "C4" H 1342 4196 50  0000 L CNN
-F 1 "0.1uF" H 1342 4105 50  0000 L CNN
-F 2 "Capacitor_SMD:C_0805_2012Metric_Pad1.15x1.40mm_HandSolder" H 1250 4150 50  0001 C CNN
-F 3 "~" H 1250 4150 50  0001 C CNN
-	1    1250 4150
-	1    0    0    -1  
-$EndComp
-$Comp
-L Device:C_Small C5
-U 1 1 63CB55B6
-P 1450 4150
-F 0 "C5" H 1542 4196 50  0000 L CNN
-F 1 "0.1uF" H 1542 4105 50  0000 L CNN
-F 2 "Capacitor_SMD:C_0805_2012Metric_Pad1.15x1.40mm_HandSolder" H 1450 4150 50  0001 C CNN
-F 3 "~" H 1450 4150 50  0001 C CNN
-	1    1450 4150
-	1    0    0    -1  
-$EndComp
 $Comp
 L Device:C_Small C6
 U 1 1 63CB598A
-P 1650 4150
-F 0 "C6" H 1742 4196 50  0000 L CNN
-F 1 "0.1uF" H 1742 4105 50  0000 L CNN
-F 2 "Capacitor_SMD:C_0805_2012Metric_Pad1.15x1.40mm_HandSolder" H 1650 4150 50  0001 C CNN
-F 3 "~" H 1650 4150 50  0001 C CNN
-	1    1650 4150
+P 1750 4150
+F 0 "C6" H 1842 4196 50  0000 L CNN
+F 1 "0.1uF" H 1842 4105 50  0000 L CNN
+F 2 "Capacitor_SMD:C_0805_2012Metric_Pad1.15x1.40mm_HandSolder" H 1750 4150 50  0001 C CNN
+F 3 "~" H 1750 4150 50  0001 C CNN
+	1    1750 4150
 	1    0    0    -1  
 $EndComp
 $Comp
 L Device:C_Small C7
 U 1 1 63CB5CD2
-P 1850 4150
-F 0 "C7" H 1942 4196 50  0000 L CNN
-F 1 "10uF" H 1942 4105 50  0000 L CNN
-F 2 "Capacitor_SMD:C_0805_2012Metric_Pad1.15x1.40mm_HandSolder" H 1850 4150 50  0001 C CNN
-F 3 "~" H 1850 4150 50  0001 C CNN
-	1    1850 4150
+P 1950 4150
+F 0 "C7" H 2042 4196 50  0000 L CNN
+F 1 "10uF" H 2042 4105 50  0000 L CNN
+F 2 "Capacitor_SMD:C_0805_2012Metric_Pad1.15x1.40mm_HandSolder" H 1950 4150 50  0001 C CNN
+F 3 "~" H 1950 4150 50  0001 C CNN
+	1    1950 4150
 	1    0    0    -1  
 $EndComp
+Connection ~ 1750 4050
 Wire Wire Line
-	1250 4050 1450 4050
-Connection ~ 1450 4050
+	1750 4050 1950 4050
 Wire Wire Line
-	1450 4050 1550 4050
-Connection ~ 1650 4050
-Wire Wire Line
-	1650 4050 1850 4050
-Wire Wire Line
-	1850 4250 1650 4250
-Connection ~ 1450 4250
-Wire Wire Line
-	1450 4250 1250 4250
-Connection ~ 1650 4250
-Wire Wire Line
-	1650 4250 1550 4250
+	1950 4250 1750 4250
+Connection ~ 1750 4250
 $Comp
 L power:+5V #PWR0105
 U 1 1 63CB6CE4
@@ -180,14 +130,8 @@ F 3 "" H 1550 4350 50  0001 C CNN
 $EndComp
 Wire Wire Line
 	1550 4350 1550 4250
-Connection ~ 1550 4250
-Wire Wire Line
-	1550 4250 1450 4250
 Wire Wire Line
 	1550 4050 1550 3950
-Connection ~ 1550 4050
-Wire Wire Line
-	1550 4050 1650 4050
 $Comp
 L power:+5V #PWR0107
 U 1 1 63CB7E91
@@ -199,146 +143,87 @@ F 3 "" H 2000 2750 50  0001 C CNN
 	1    2000 2750
 	1    0    0    -1  
 $EndComp
-Wire Wire Line
-	2200 2750 2000 2750
 $Comp
 L Device:Crystal_GND24_Small Y1
 U 1 1 63CB90F3
-P 1850 2250
-F 0 "Y1" V 1804 2394 50  0000 L CNN
-F 1 "16MHz" V 1895 2394 50  0000 L CNN
-F 2 "Crystal:Crystal_SMD_3225-4Pin_3.2x2.5mm_HandSoldering" H 1850 2250 50  0001 C CNN
-F 3 "~" H 1850 2250 50  0001 C CNN
-	1    1850 2250
+P 1100 2450
+F 0 "Y1" V 1054 2594 50  0000 L CNN
+F 1 "16MHz" V 1145 2594 50  0000 L CNN
+F 2 "Crystal:Crystal_SMD_3225-4Pin_3.2x2.5mm_HandSoldering" H 1100 2450 50  0001 C CNN
+F 3 "~" H 1100 2450 50  0001 C CNN
+	1    1100 2450
 	0    1    1    0   
 $EndComp
 Wire Wire Line
-	2200 2150 1850 2150
+	1450 2350 1100 2350
 Wire Wire Line
-	2200 2350 1850 2350
+	1450 2550 1100 2550
 $Comp
 L Device:C_Small C2
 U 1 1 63CBAF26
-P 1550 2300
-F 0 "C2" V 1321 2300 50  0000 C CNN
-F 1 "22pF" V 1412 2300 50  0000 C CNN
-F 2 "Capacitor_SMD:C_0805_2012Metric_Pad1.15x1.40mm_HandSolder" H 1550 2300 50  0001 C CNN
-F 3 "~" H 1550 2300 50  0001 C CNN
-	1    1550 2300
+P 800 2500
+F 0 "C2" V 571 2500 50  0000 C CNN
+F 1 "22pF" V 662 2500 50  0000 C CNN
+F 2 "Capacitor_SMD:C_0805_2012Metric_Pad1.15x1.40mm_HandSolder" H 800 2500 50  0001 C CNN
+F 3 "~" H 800 2500 50  0001 C CNN
+	1    800  2500
 	0    1    1    0   
 $EndComp
 $Comp
 L power:GND #PWR0108
 U 1 1 63CBBA40
-P 1450 2550
-F 0 "#PWR0108" H 1450 2300 50  0001 C CNN
-F 1 "GND" H 1455 2377 50  0000 C CNN
-F 2 "" H 1450 2550 50  0001 C CNN
-F 3 "" H 1450 2550 50  0001 C CNN
-	1    1450 2550
+P 700 2750
+F 0 "#PWR0108" H 700 2500 50  0001 C CNN
+F 1 "GND" H 705 2577 50  0000 C CNN
+F 2 "" H 700 2750 50  0001 C CNN
+F 3 "" H 700 2750 50  0001 C CNN
+	1    700  2750
 	1    0    0    -1  
 $EndComp
+Connection ~ 1100 2350
 Wire Wire Line
-	1850 2150 1850 2100
-Connection ~ 1850 2150
+	700  2300 700  2500
+Connection ~ 700  2500
 Wire Wire Line
-	1450 2100 1450 2300
-Connection ~ 1450 2300
+	700  2500 700  2700
 Wire Wire Line
-	1450 2300 1450 2500
+	900  2500 900  2550
 Wire Wire Line
-	1650 2300 1650 2350
+	900  2550 1100 2550
+Connection ~ 1100 2550
 Wire Wire Line
-	1650 2350 1850 2350
-Connection ~ 1850 2350
+	1000 2450 1000 2600
 Wire Wire Line
-	1750 2250 1750 2400
+	1000 2600 1100 2600
 Wire Wire Line
-	1750 2400 1850 2400
+	1200 2600 1200 2450
 Wire Wire Line
-	1950 2400 1950 2250
+	1100 2600 1100 2700
 Wire Wire Line
-	1850 2400 1850 2500
+	1100 2700 700  2700
+Connection ~ 1100 2600
 Wire Wire Line
-	1850 2500 1450 2500
-Connection ~ 1850 2400
+	1100 2600 1200 2600
+Connection ~ 700  2700
 Wire Wire Line
-	1850 2400 1950 2400
-Connection ~ 1450 2500
-Wire Wire Line
-	1450 2500 1450 2550
-$Comp
-L Switch:SW_Push SW1
-U 1 1 63CC0865
-P 1900 1950
-F 0 "SW1" H 1900 2235 50  0000 C CNN
-F 1 "SW_Push" H 1900 2144 50  0000 C CNN
-F 2 "random-keyboard-parts:SKQG-1155865" H 1900 2150 50  0001 C CNN
-F 3 "~" H 1900 2150 50  0001 C CNN
-	1    1900 1950
-	1    0    0    -1  
-$EndComp
-$Comp
-L power:GND #PWR0109
-U 1 1 63CC0CE0
-P 1400 1950
-F 0 "#PWR0109" H 1400 1700 50  0001 C CNN
-F 1 "GND" H 1405 1777 50  0000 C CNN
-F 2 "" H 1400 1950 50  0001 C CNN
-F 3 "" H 1400 1950 50  0001 C CNN
-	1    1400 1950
-	1    0    0    -1  
-$EndComp
-Wire Wire Line
-	1400 1950 1700 1950
-Wire Wire Line
-	2100 1950 2150 1950
-$Comp
-L power:+5V #PWR0110
-U 1 1 63CC27F1
-P 2150 1550
-F 0 "#PWR0110" H 2150 1400 50  0001 C CNN
-F 1 "+5V" H 2165 1723 50  0000 C CNN
-F 2 "" H 2150 1550 50  0001 C CNN
-F 3 "" H 2150 1550 50  0001 C CNN
-	1    2150 1550
-	1    0    0    -1  
-$EndComp
-Wire Wire Line
-	2150 1950 2150 1800
-Connection ~ 2150 1950
-Wire Wire Line
-	2150 1950 2200 1950
-$Comp
-L Device:R_Small R1
-U 1 1 63CC368A
-P 2150 1700
-F 0 "R1" H 2209 1746 50  0000 L CNN
-F 1 "10k" H 2209 1655 50  0000 L CNN
-F 2 "Resistor_SMD:R_0805_2012Metric_Pad1.15x1.40mm_HandSolder" H 2150 1700 50  0001 C CNN
-F 3 "~" H 2150 1700 50  0001 C CNN
-	1    2150 1700
-	1    0    0    -1  
-$EndComp
-Wire Wire Line
-	2150 1600 2150 1550
+	700  2700 700  2750
 Text GLabel 4350 3400 0    50   Input ~ 0
 Row0
 $Comp
 L Device:C_Small C1
 U 1 1 63CE79D0
-P 1550 2100
-F 0 "C1" V 1321 2100 50  0000 C CNN
-F 1 "22pF" V 1412 2100 50  0000 C CNN
-F 2 "Capacitor_SMD:C_0805_2012Metric_Pad1.15x1.40mm_HandSolder" H 1550 2100 50  0001 C CNN
-F 3 "~" H 1550 2100 50  0001 C CNN
-	1    1550 2100
+P 800 2300
+F 0 "C1" V 571 2300 50  0000 C CNN
+F 1 "22pF" V 662 2300 50  0000 C CNN
+F 2 "Capacitor_SMD:C_0805_2012Metric_Pad1.15x1.40mm_HandSolder" H 800 2300 50  0001 C CNN
+F 3 "~" H 800 2300 50  0001 C CNN
+	1    800  2300
 	0    1    1    0   
 $EndComp
 Wire Wire Line
-	1650 2100 1650 2150
+	900  2300 900  2350
 Wire Wire Line
-	1650 2150 1850 2150
+	900  2350 1100 2350
 $Comp
 L power:GND #PWR0103
 U 1 1 63CB1153
@@ -350,14 +235,8 @@ F 3 "" H 4100 4050 50  0001 C CNN
 	1    4100 4050
 	1    0    0    -1  
 $EndComp
-Connection ~ 4650 3400
 Wire Wire Line
 	4350 3400 4650 3400
-Wire Wire Line
-	4950 3000 4950 3400
-Connection ~ 4950 3000
-Wire Wire Line
-	4950 3400 4650 3400
 Wire Wire Line
 	4950 2700 4950 3000
 $Comp
@@ -384,15 +263,9 @@ F 3 "~" V 4650 3300 50  0001 C CNN
 	1    4650 3300
 	0    -1   -1   0   
 $EndComp
-Connection ~ 4950 3400
 Connection ~ 4650 3950
 Wire Wire Line
 	4350 3950 4650 3950
-Wire Wire Line
-	4950 3550 4950 3950
-Connection ~ 4950 3550
-Wire Wire Line
-	4950 3250 4950 3400
 $Comp
 L MX_Alps_Hybrid:MX-NoLED MX11
 U 1 1 63DCEE45
@@ -417,14 +290,6 @@ F 3 "~" V 4650 3850 50  0001 C CNN
 	1    4650 3850
 	0    -1   -1   0   
 $EndComp
-Wire Wire Line
-	4950 3400 4950 3550
-Connection ~ 5200 3400
-Wire Wire Line
-	4900 3400 4950 3400
-Wire Wire Line
-	5500 3000 5500 3400
-Connection ~ 5500 3000
 Wire Wire Line
 	5500 2700 5500 3000
 $Comp
@@ -451,13 +316,7 @@ F 3 "~" V 5200 3300 50  0001 C CNN
 	1    5200 3300
 	0    -1   -1   0   
 $EndComp
-Connection ~ 5500 3400
 Connection ~ 5200 3950
-Wire Wire Line
-	5500 3550 5500 3950
-Connection ~ 5500 3550
-Wire Wire Line
-	5500 3250 5500 3400
 $Comp
 L MX_Alps_Hybrid:MX-NoLED MX12
 U 1 1 63DDAB53
@@ -483,25 +342,11 @@ F 3 "~" V 5200 3850 50  0001 C CNN
 	0    -1   -1   0   
 $EndComp
 Wire Wire Line
-	5500 3400 5500 3550
-Wire Wire Line
-	4950 3400 5200 3400
-Wire Wire Line
-	5450 3400 5500 3400
-Wire Wire Line
-	5500 3400 5200 3400
-Wire Wire Line
 	4650 3950 5200 3950
 Wire Wire Line
 	5200 3950 5750 3950
 Wire Wire Line
-	5500 3400 5750 3400
-Wire Wire Line
 	5750 3950 6300 3950
-Wire Wire Line
-	6050 3400 6300 3400
-Wire Wire Line
-	6600 3400 6600 3550
 $Comp
 L Device:D_Small D14
 U 1 1 63DE1B75
@@ -526,13 +371,7 @@ F 3 "" H 5825 3575 60  0001 C CNN
 	1    6450 3600
 	1    0    0    -1  
 $EndComp
-Wire Wire Line
-	6600 3250 6600 3400
-Connection ~ 6600 3550
-Wire Wire Line
-	6600 3550 6600 3950
 Connection ~ 6300 3950
-Connection ~ 6600 3400
 $Comp
 L Device:D_Small D4
 U 1 1 63DE1B62
@@ -557,15 +396,6 @@ F 3 "" H 5825 3025 60  0001 C CNN
 	1    6450 3050
 	1    0    0    -1  
 $EndComp
-Wire Wire Line
-	6600 3400 6300 3400
-Wire Wire Line
-	6600 3000 6600 3400
-Wire Wire Line
-	6000 3400 6050 3400
-Connection ~ 6300 3400
-Wire Wire Line
-	6050 3400 6050 3550
 $Comp
 L Device:D_Small D13
 U 1 1 63DE1B50
@@ -590,13 +420,7 @@ F 3 "" H 5275 3575 60  0001 C CNN
 	1    5900 3600
 	1    0    0    -1  
 $EndComp
-Wire Wire Line
-	6050 3250 6050 3400
-Connection ~ 6050 3550
-Wire Wire Line
-	6050 3550 6050 3950
 Connection ~ 5750 3950
-Connection ~ 6050 3400
 $Comp
 L Device:D_Small D3
 U 1 1 63DE1B3D
@@ -621,18 +445,6 @@ F 3 "" H 5275 3025 60  0001 C CNN
 	1    5900 3050
 	1    0    0    -1  
 $EndComp
-Wire Wire Line
-	6050 3400 5750 3400
-Wire Wire Line
-	6050 3000 6050 3400
-Connection ~ 5750 3400
-Connection ~ 6850 3400
-Wire Wire Line
-	6550 3400 6600 3400
-Wire Wire Line
-	7150 3000 7150 3400
-Wire Wire Line
-	7150 3400 6850 3400
 $Comp
 L MX_Alps_Hybrid:MX-NoLED MX5
 U 1 1 63DFA6BB
@@ -657,24 +469,7 @@ F 3 "~" V 6850 3300 50  0001 C CNN
 	1    6850 3300
 	0    -1   -1   0   
 $EndComp
-Connection ~ 7150 3400
 Connection ~ 6850 3950
-Wire Wire Line
-	7150 3550 7150 3950
-Connection ~ 7150 3550
-Wire Wire Line
-	7150 3250 7150 3400
-$Comp
-L MX_Alps_Hybrid:MX-NoLED MX15
-U 1 1 63DFA6CE
-P 7000 3600
-F 0 "MX15" H 7033 3823 60  0000 C CNN
-F 1 "G" H 7033 3749 20  0000 C CNN
-F 2 "MX_Alps_Hybrid:MX-1U" H 6375 3575 60  0001 C CNN
-F 3 "" H 6375 3575 60  0001 C CNN
-	1    7000 3600
-	1    0    0    -1  
-$EndComp
 Wire Wire Line
 	6850 3750 6950 3750
 $Comp
@@ -688,13 +483,6 @@ F 3 "~" V 6850 3850 50  0001 C CNN
 	1    6850 3850
 	0    -1   -1   0   
 $EndComp
-Wire Wire Line
-	7150 3400 7150 3550
-Connection ~ 7400 3400
-Wire Wire Line
-	7100 3400 7150 3400
-Wire Wire Line
-	7700 3000 7700 3400
 $Comp
 L MX_Alps_Hybrid:MX-NoLED MX6
 U 1 1 63DFA6DF
@@ -719,13 +507,7 @@ F 3 "~" V 7400 3300 50  0001 C CNN
 	1    7400 3300
 	0    -1   -1   0   
 $EndComp
-Connection ~ 7700 3400
 Connection ~ 7400 3950
-Wire Wire Line
-	7700 3550 7700 3950
-Connection ~ 7700 3550
-Wire Wire Line
-	7700 3250 7700 3400
 $Comp
 L MX_Alps_Hybrid:MX-NoLED MX16
 U 1 1 63DFA6F1
@@ -751,25 +533,11 @@ F 3 "~" V 7400 3850 50  0001 C CNN
 	0    -1   -1   0   
 $EndComp
 Wire Wire Line
-	7700 3400 7700 3550
-Wire Wire Line
-	7150 3400 7400 3400
-Wire Wire Line
-	7650 3400 7700 3400
-Wire Wire Line
-	7700 3400 7400 3400
-Wire Wire Line
 	6850 3950 7400 3950
 Wire Wire Line
 	7400 3950 7950 3950
 Wire Wire Line
-	7700 3400 7950 3400
-Wire Wire Line
 	7950 3950 8500 3950
-Wire Wire Line
-	8250 3400 8500 3400
-Wire Wire Line
-	8800 3400 8800 3550
 $Comp
 L Device:D_Small D18
 U 1 1 63DFA708
@@ -783,26 +551,6 @@ F 3 "~" V 8500 3850 50  0001 C CNN
 $EndComp
 Wire Wire Line
 	8500 3750 8600 3750
-$Comp
-L MX_Alps_Hybrid:MX-NoLED MX18
-U 1 1 63DFA70F
-P 8650 3600
-F 0 "MX18" H 8683 3823 60  0000 C CNN
-F 1 "K" H 8683 3749 20  0000 C CNN
-F 2 "MX_Alps_Hybrid:MX-1U" H 8025 3575 60  0001 C CNN
-F 3 "" H 8025 3575 60  0001 C CNN
-	1    8650 3600
-	1    0    0    -1  
-$EndComp
-Wire Wire Line
-	8800 3250 8800 3400
-Wire Wire Line
-	8800 3950 8500 3950
-Connection ~ 8800 3550
-Wire Wire Line
-	8800 3550 8800 3950
-Connection ~ 8500 3950
-Connection ~ 8800 3400
 $Comp
 L Device:D_Small D8
 U 1 1 63DFA71B
@@ -827,15 +575,6 @@ F 3 "" H 8025 3025 60  0001 C CNN
 	1    8650 3050
 	1    0    0    -1  
 $EndComp
-Wire Wire Line
-	8800 3400 8500 3400
-Wire Wire Line
-	8800 3000 8800 3400
-Wire Wire Line
-	8200 3400 8250 3400
-Connection ~ 8500 3400
-Wire Wire Line
-	8250 3400 8250 3550
 $Comp
 L Device:D_Small D17
 U 1 1 63DFA72D
@@ -860,13 +599,7 @@ F 3 "" H 7475 3575 60  0001 C CNN
 	1    8100 3600
 	1    0    0    -1  
 $EndComp
-Wire Wire Line
-	8250 3250 8250 3400
-Connection ~ 8250 3550
-Wire Wire Line
-	8250 3550 8250 3950
 Connection ~ 7950 3950
-Connection ~ 8250 3400
 $Comp
 L Device:D_Small D7
 U 1 1 63DFA73F
@@ -892,20 +625,7 @@ F 3 "" H 7475 3025 60  0001 C CNN
 	1    0    0    -1  
 $EndComp
 Wire Wire Line
-	8250 3400 7950 3400
-Wire Wire Line
-	8250 3000 8250 3400
-Connection ~ 7950 3400
-Wire Wire Line
-	6600 3400 6850 3400
-Wire Wire Line
 	6300 3950 6850 3950
-Wire Wire Line
-	8500 3950 9050 3950
-Wire Wire Line
-	8800 3400 9050 3400
-Wire Wire Line
-	9350 3400 9350 3550
 $Comp
 L Device:D_Small D19
 U 1 1 63E00F7D
@@ -930,15 +650,6 @@ F 3 "" H 8575 3575 60  0001 C CNN
 	1    9200 3600
 	1    0    0    -1  
 $EndComp
-Wire Wire Line
-	9350 3250 9350 3400
-Wire Wire Line
-	9350 3950 9050 3950
-Connection ~ 9350 3550
-Wire Wire Line
-	9350 3550 9350 3950
-Connection ~ 9050 3950
-Connection ~ 9350 3400
 $Comp
 L Device:D_Small D9
 U 1 1 63E00F90
@@ -964,11 +675,6 @@ F 3 "" H 8575 3025 60  0001 C CNN
 	1    0    0    -1  
 $EndComp
 Wire Wire Line
-	9350 3400 9050 3400
-Wire Wire Line
-	9350 3000 9350 3400
-Connection ~ 9050 3400
-Wire Wire Line
 	6050 2700 6050 3000
 Wire Wire Line
 	6600 2700 6600 3000
@@ -982,12 +688,8 @@ Wire Wire Line
 	8800 2700 8800 3000
 Wire Wire Line
 	9350 2700 9350 3000
-Connection ~ 4650 4500
 Wire Wire Line
 	4350 4500 4650 4500
-Wire Wire Line
-	4950 4100 4950 4500
-Connection ~ 4950 4100
 $Comp
 L MX_Alps_Hybrid:MX-NoLED MX21
 U 1 1 63E34C94
@@ -1012,10 +714,6 @@ F 3 "~" V 4650 4400 50  0001 C CNN
 	1    4650 4400
 	0    -1   -1   0   
 $EndComp
-Wire Wire Line
-	4950 3950 4950 4100
-Connection ~ 5200 4500
-Connection ~ 5500 4100
 $Comp
 L MX_Alps_Hybrid:MX-NoLED MX22
 U 1 1 63E34CA5
@@ -1040,16 +738,6 @@ F 3 "~" V 5200 4400 50  0001 C CNN
 	1    5200 4400
 	0    -1   -1   0   
 $EndComp
-Wire Wire Line
-	5500 3950 5500 4100
-Wire Wire Line
-	4650 4500 4950 4500
-Wire Wire Line
-	5200 4500 5500 4500
-Wire Wire Line
-	5750 4500 6050 4500
-Wire Wire Line
-	6600 3950 6600 4100
 $Comp
 L Device:D_Small D24
 U 1 1 63E34CB7
@@ -1074,12 +762,6 @@ F 3 "" H 5825 4125 60  0001 C CNN
 	1    6450 4150
 	1    0    0    -1  
 $EndComp
-Connection ~ 6600 4100
-Wire Wire Line
-	6600 4100 6600 4500
-Connection ~ 6300 4500
-Wire Wire Line
-	6050 3950 6050 4100
 $Comp
 L Device:D_Small D23
 U 1 1 63E34CC8
@@ -1104,14 +786,6 @@ F 3 "" H 5275 4125 60  0001 C CNN
 	1    5900 4150
 	1    0    0    -1  
 $EndComp
-Connection ~ 6050 4100
-Wire Wire Line
-	6050 4100 6050 4500
-Connection ~ 5750 4500
-Connection ~ 6850 4500
-Wire Wire Line
-	7150 4100 7150 4500
-Connection ~ 7150 4100
 $Comp
 L MX_Alps_Hybrid:MX-NoLED MX25
 U 1 1 63E34CDB
@@ -1136,12 +810,6 @@ F 3 "~" V 6850 4400 50  0001 C CNN
 	1    6850 4400
 	0    -1   -1   0   
 $EndComp
-Wire Wire Line
-	7150 3950 7150 4100
-Connection ~ 7400 4500
-Wire Wire Line
-	7700 4100 7700 4500
-Connection ~ 7700 4100
 $Comp
 L MX_Alps_Hybrid:MX-NoLED MX26
 U 1 1 63E34CEC
@@ -1166,16 +834,6 @@ F 3 "~" V 7400 4400 50  0001 C CNN
 	1    7400 4400
 	0    -1   -1   0   
 $EndComp
-Wire Wire Line
-	7700 3950 7700 4100
-Wire Wire Line
-	6850 4500 7150 4500
-Wire Wire Line
-	7400 4500 7700 4500
-Wire Wire Line
-	7950 4500 8250 4500
-Wire Wire Line
-	8800 3950 8800 4100
 $Comp
 L Device:D_Small D28
 U 1 1 63E34CFE
@@ -1200,14 +858,6 @@ F 3 "" H 8025 4125 60  0001 C CNN
 	1    8650 4150
 	1    0    0    -1  
 $EndComp
-Wire Wire Line
-	8800 4500 8500 4500
-Connection ~ 8800 4100
-Wire Wire Line
-	8800 4100 8800 4500
-Connection ~ 8500 4500
-Wire Wire Line
-	8250 3950 8250 4100
 $Comp
 L Device:D_Small D27
 U 1 1 63E34D10
@@ -1232,14 +882,6 @@ F 3 "" H 7475 4125 60  0001 C CNN
 	1    8100 4150
 	1    0    0    -1  
 $EndComp
-Connection ~ 8250 4100
-Wire Wire Line
-	8250 4100 8250 4500
-Connection ~ 7950 4500
-Wire Wire Line
-	6300 4500 6600 4500
-Wire Wire Line
-	9350 3950 9350 4100
 $Comp
 L Device:D_Small D29
 U 1 1 63E34D23
@@ -1264,10 +906,6 @@ F 3 "" H 8575 4125 60  0001 C CNN
 	1    9200 4150
 	1    0    0    -1  
 $EndComp
-Wire Wire Line
-	9350 4500 9050 4500
-Connection ~ 9350 4100
-Connection ~ 9050 4500
 Connection ~ 4650 5450
 Wire Wire Line
 	4350 5450 4650 5450
@@ -1285,9 +923,6 @@ F 3 "~" V 4650 5350 50  0001 C CNN
 	0    -1   -1   0   
 $EndComp
 Connection ~ 5200 5450
-Wire Wire Line
-	5500 5050 5500 5450
-Connection ~ 5500 5050
 $Comp
 L MX_Alps_Hybrid:MX-NoLED MX32
 U 1 1 63E4BF7F
@@ -1342,9 +977,6 @@ F 3 "" H 5825 5075 60  0001 C CNN
 	1    6450 5100
 	1    0    0    -1  
 $EndComp
-Connection ~ 6600 5050
-Wire Wire Line
-	6600 5050 6600 5450
 Connection ~ 6300 5450
 $Comp
 L Device:D_Small D33
@@ -1370,14 +1002,8 @@ F 3 "" H 5275 5075 60  0001 C CNN
 	1    5900 5100
 	1    0    0    -1  
 $EndComp
-Connection ~ 6050 5050
-Wire Wire Line
-	6050 5050 6050 5450
 Connection ~ 5750 5450
 Connection ~ 6850 5450
-Wire Wire Line
-	7150 5050 7150 5450
-Connection ~ 7150 5050
 $Comp
 L MX_Alps_Hybrid:MX-NoLED MX35
 U 1 1 63E4BFB5
@@ -1403,9 +1029,6 @@ F 3 "~" V 6850 5350 50  0001 C CNN
 	0    -1   -1   0   
 $EndComp
 Connection ~ 7400 5450
-Wire Wire Line
-	7700 5050 7700 5450
-Connection ~ 7700 5050
 $Comp
 L MX_Alps_Hybrid:MX-NoLED MX36
 U 1 1 63E4BFC6
@@ -1460,11 +1083,6 @@ F 3 "" H 8025 5075 60  0001 C CNN
 	1    8650 5100
 	1    0    0    -1  
 $EndComp
-Wire Wire Line
-	8800 5450 8500 5450
-Connection ~ 8800 5050
-Wire Wire Line
-	8800 5050 8800 5450
 Connection ~ 8500 5450
 $Comp
 L Device:D_Small D37
@@ -1490,9 +1108,6 @@ F 3 "" H 7475 5075 60  0001 C CNN
 	1    8100 5100
 	1    0    0    -1  
 $EndComp
-Connection ~ 8250 5050
-Wire Wire Line
-	8250 5050 8250 5450
 Connection ~ 7950 5450
 Wire Wire Line
 	6300 5450 6850 5450
@@ -1504,8 +1119,6 @@ Text GLabel 4350 5450 0    50   Input ~ 0
 Row3
 Text GLabel 4950 2700 1    50   Input ~ 0
 Col0
-Text GLabel 5500 2700 1    50   Input ~ 0
-Col1
 Text GLabel 6050 2700 1    50   Input ~ 0
 Col2
 Text GLabel 6600 2700 1    50   Input ~ 0
@@ -1520,9 +1133,6 @@ Text GLabel 8800 2700 1    50   Input ~ 0
 Col7
 Text GLabel 9350 2700 1    50   Input ~ 0
 Col8
-Connection ~ 4950 5050
-Wire Wire Line
-	4950 5050 4950 5450
 $Comp
 L MX_Alps_Hybrid:MX-NoLED MX31
 U 1 1 63E4BF6E
@@ -1534,50 +1144,6 @@ F 3 "" H 4175 5075 60  0001 C CNN
 	1    4800 5100
 	1    0    0    -1  
 $EndComp
-Wire Wire Line
-	4950 4500 4950 5050
-Connection ~ 4950 4500
-Wire Wire Line
-	4950 4500 5200 4500
-Wire Wire Line
-	5500 4100 5500 4500
-Connection ~ 5500 4500
-Wire Wire Line
-	5500 4500 5750 4500
-Wire Wire Line
-	5500 4500 5500 5050
-Wire Wire Line
-	6050 4500 6050 5050
-Connection ~ 6050 4500
-Wire Wire Line
-	6050 4500 6300 4500
-Wire Wire Line
-	6600 4500 6600 5050
-Connection ~ 6600 4500
-Wire Wire Line
-	6600 4500 6850 4500
-Wire Wire Line
-	7150 4500 7150 5050
-Connection ~ 7150 4500
-Wire Wire Line
-	7150 4500 7400 4500
-Wire Wire Line
-	7700 4500 7700 5050
-Connection ~ 7700 4500
-Wire Wire Line
-	7700 4500 7950 4500
-Wire Wire Line
-	8250 4500 8250 5050
-Connection ~ 8250 4500
-Wire Wire Line
-	8250 4500 8500 4500
-Wire Wire Line
-	8800 4500 8800 5050
-Connection ~ 8800 4500
-Wire Wire Line
-	8800 4500 9050 4500
-Wire Wire Line
-	9350 4100 9350 4500
 $Comp
 L Connector:AVR-ISP-6 J1
 U 1 1 6402A39B
@@ -1619,9 +1185,9 @@ F 3 "" H 8050 1050 50  0001 C CNN
 	1    8050 1050
 	1    0    0    -1  
 $EndComp
-Text GLabel 3400 2250 2    50   Input ~ 0
-MISO
 Text GLabel 3400 2150 2    50   Input ~ 0
+MISO
+Text GLabel 3400 2250 2    50   Input ~ 0
 MOSI
 Text GLabel 3400 2050 2    50   Input ~ 0
 SCK
@@ -1805,7 +1371,7 @@ Connection ~ 4950 1950
 Wire Wire Line
 	4500 850  4600 850 
 Wire Wire Line
-	4600 850  4600 2050
+	4600 850  4600 1950
 Wire Wire Line
 	4800 2300 6150 2300
 $Comp
@@ -1840,18 +1406,8 @@ Wire Wire Line
 Wire Wire Line
 	4800 2300 4800 1950
 Connection ~ 4800 2300
-Connection ~ 4800 1950
-Wire Wire Line
-	4800 1950 4500 1950
-Wire Wire Line
-	2500 5250 2700 5250
-Connection ~ 2700 5250
-Wire Wire Line
-	2700 5250 2800 5250
 Wire Wire Line
 	2800 1550 2900 1550
-Wire Wire Line
-	2900 1550 2900 1650
 Connection ~ 2800 1550
 NoConn ~ 4500 1050
 NoConn ~ 4500 1650
@@ -1883,10 +1439,323 @@ F 3 "~" V 9050 5350 50  0001 C CNN
 	1    9050 5350
 	0    -1   -1   0   
 $EndComp
+Text GLabel 5500 2700 1    50   Input ~ 0
+Col1
+Text GLabel 1450 2350 2    50   Input ~ 0
+XTAL1
+Text GLabel 1450 2550 2    50   Input ~ 0
+XTAL2
+Text GLabel 2200 2150 0    50   Input ~ 0
+XTAL1
+Text GLabel 2200 2350 0    50   Input ~ 0
+XTAL2
 Wire Wire Line
-	9350 4500 9350 5050
-Connection ~ 9350 4500
+	8500 5450 9050 5450
+$Comp
+L MX_Alps_Hybrid:MX-NoLED MX15
+U 1 1 63DFA6CE
+P 7000 3600
+F 0 "MX15" H 7033 3823 60  0000 C CNN
+F 1 "G" H 7033 3749 20  0000 C CNN
+F 2 "MX_Alps_Hybrid:MX-1U" H 6375 3575 60  0001 C CNN
+F 3 "" H 6375 3575 60  0001 C CNN
+	1    7000 3600
+	1    0    0    -1  
+$EndComp
+$Comp
+L MX_Alps_Hybrid:MX-NoLED MX18
+U 1 1 63DFA70F
+P 8650 3600
+F 0 "MX18" H 8683 3823 60  0000 C CNN
+F 1 "K" H 8683 3749 20  0000 C CNN
+F 2 "MX_Alps_Hybrid:MX-1U" H 8025 3575 60  0001 C CNN
+F 3 "" H 8025 3575 60  0001 C CNN
+	1    8650 3600
+	1    0    0    -1  
+$EndComp
 Wire Wire Line
-	8800 5450 9050 5450
-Connection ~ 8800 5450
+	4650 3400 5200 3400
+Connection ~ 4650 3400
+Wire Wire Line
+	5200 3400 5750 3400
+Connection ~ 5200 3400
+Wire Wire Line
+	5750 3400 6300 3400
+Connection ~ 5750 3400
+Connection ~ 6300 3400
+Wire Wire Line
+	6300 3400 6850 3400
+Connection ~ 6850 3400
+Wire Wire Line
+	6850 3400 7400 3400
+Connection ~ 7400 3400
+Wire Wire Line
+	7400 3400 7950 3400
+Connection ~ 7950 3400
+Wire Wire Line
+	7950 3400 8500 3400
+Connection ~ 8500 3400
+Wire Wire Line
+	8500 3400 9050 3400
+Wire Wire Line
+	4950 3000 4950 3550
+Connection ~ 4950 3000
+Wire Wire Line
+	4950 3550 4950 4100
+Connection ~ 4950 3550
+Wire Wire Line
+	4950 4100 4950 5050
+Connection ~ 4950 4100
+Wire Wire Line
+	4650 4500 5200 4500
+Connection ~ 4650 4500
+Connection ~ 5200 4500
+Wire Wire Line
+	5200 4500 5750 4500
+Connection ~ 5750 4500
+Wire Wire Line
+	5750 4500 6300 4500
+Connection ~ 6300 4500
+Wire Wire Line
+	6300 4500 6850 4500
+Connection ~ 6850 4500
+Wire Wire Line
+	6850 4500 7400 4500
+Connection ~ 7400 4500
+Wire Wire Line
+	7400 4500 7950 4500
+Connection ~ 7950 4500
+Wire Wire Line
+	7950 4500 8500 4500
+Connection ~ 8500 4500
+Wire Wire Line
+	8500 4500 9050 4500
+Wire Wire Line
+	5500 3000 5500 3550
+Connection ~ 5500 3000
+Connection ~ 5500 3550
+Wire Wire Line
+	5500 3550 5500 4100
+Connection ~ 5500 4100
+Wire Wire Line
+	5500 4100 5500 5050
+Wire Wire Line
+	6050 3000 6050 3550
+Connection ~ 6050 3000
+Connection ~ 6050 3550
+Wire Wire Line
+	6050 3550 6050 4100
+Connection ~ 6050 4100
+Wire Wire Line
+	6050 4100 6050 5050
+Wire Wire Line
+	6600 3000 6600 3550
+Connection ~ 6600 3000
+Connection ~ 6600 3550
+Wire Wire Line
+	6600 3550 6600 4100
+Connection ~ 6600 4100
+Wire Wire Line
+	6600 4100 6600 5050
+Wire Wire Line
+	7150 3000 7150 3550
+Connection ~ 7150 3000
+Connection ~ 7150 3550
+Wire Wire Line
+	7150 3550 7150 4100
+Connection ~ 7150 4100
+Wire Wire Line
+	7150 4100 7150 5050
+Wire Wire Line
+	7700 3000 7700 3550
+Connection ~ 7700 3000
+Connection ~ 7700 3550
+Wire Wire Line
+	7700 3550 7700 4100
+Connection ~ 7700 4100
+Wire Wire Line
+	7700 4100 7700 5050
+Wire Wire Line
+	8250 3000 8250 3550
+Connection ~ 8250 3000
+Connection ~ 8250 3550
+Wire Wire Line
+	8250 3550 8250 4100
+Connection ~ 8250 4100
+Wire Wire Line
+	8250 4100 8250 5050
+Wire Wire Line
+	8800 3000 8800 3550
+Connection ~ 8800 3000
+Wire Wire Line
+	8800 4100 8800 5050
+Wire Wire Line
+	9350 3000 9350 3550
+Connection ~ 9350 3000
+Connection ~ 9350 3550
+Wire Wire Line
+	9350 3550 9350 4100
+Connection ~ 9350 4100
+Wire Wire Line
+	9350 4100 9350 5050
+Wire Wire Line
+	8500 3950 9050 3950
+Connection ~ 8500 3950
+Wire Wire Line
+	8800 3550 8800 4100
+Connection ~ 8800 3550
+Connection ~ 8800 4100
+Text GLabel 3400 3150 2    50   Input ~ 0
+Row2
+Text GLabel 3400 3250 2    50   Input ~ 0
+Row1
+Text GLabel 3400 3350 2    50   Input ~ 0
+Row0
+Text GLabel 3400 3450 2    50   Input ~ 0
+Row3
+Text GLabel 3400 3650 2    50   Input ~ 0
+Col0
+Text GLabel 3400 3550 2    50   Input ~ 0
+Col1
+Text GLabel 3400 3750 2    50   Input ~ 0
+Col2
+Text GLabel 3400 3850 2    50   Input ~ 0
+Col3
+Text GLabel 3400 2350 2    50   Input ~ 0
+Col4
+Text GLabel 3400 2450 2    50   Input ~ 0
+Col5
+Text GLabel 3400 2550 2    50   Input ~ 0
+Col6
+Text GLabel 3400 2850 2    50   Input ~ 0
+Col7
+Text GLabel 3400 2950 2    50   Input ~ 0
+Col8
+Wire Wire Line
+	4800 1950 4600 1950
+Connection ~ 4800 1950
+Connection ~ 4600 1950
+Wire Wire Line
+	4600 1950 4600 2050
+Wire Wire Line
+	4500 1950 4600 1950
+Wire Wire Line
+	1550 4050 1750 4050
+Connection ~ 1550 4050
+Wire Wire Line
+	1550 4250 1750 4250
+Connection ~ 1550 4250
+$Comp
+L Device:C_Small C8
+U 1 1 64150C55
+P 1550 4150
+F 0 "C8" H 1642 4196 50  0000 L CNN
+F 1 "0.1uF" H 1642 4105 50  0000 L CNN
+F 2 "Capacitor_SMD:C_0805_2012Metric_Pad1.15x1.40mm_HandSolder" H 1550 4150 50  0001 C CNN
+F 3 "~" H 1550 4150 50  0001 C CNN
+	1    1550 4150
+	1    0    0    -1  
+$EndComp
+Wire Wire Line
+	2200 2750 2000 2750
+Wire Wire Line
+	1950 3250 2200 3250
+Wire Wire Line
+	2500 5250 2700 5250
+Connection ~ 2700 5250
+Wire Wire Line
+	3650 4050 3400 4050
+Wire Wire Line
+	2900 1550 2900 1650
+Wire Wire Line
+	2700 1550 2700 1650
+Wire Wire Line
+	2700 5250 2800 5250
+Wire Wire Line
+	2800 1650 2800 1550
+$Comp
+L MCU_Microchip_ATmega:ATmega32U4-AU U1
+U 1 1 63CAD9B8
+P 2800 3450
+F 0 "U1" H 2800 1561 50  0000 C CNN
+F 1 "ATmega32U4-AU" H 2800 1470 50  0000 C CNN
+F 2 "Package_QFP:TQFP-44_10x10mm_P0.8mm" H 2800 3450 50  0001 C CIN
+F 3 "http://ww1.microchip.com/downloads/en/DeviceDoc/Atmel-7766-8-bit-AVR-ATmega16U4-32U4_Datasheet.pdf" H 2800 3450 50  0001 C CNN
+	1    2800 3450
+	1    0    0    -1  
+$EndComp
+Wire Wire Line
+	1750 1100 1750 1050
+$Comp
+L Device:R_Small R1
+U 1 1 63CC368A
+P 1750 1200
+F 0 "R1" H 1809 1246 50  0000 L CNN
+F 1 "10k" H 1809 1155 50  0000 L CNN
+F 2 "Resistor_SMD:R_0805_2012Metric_Pad1.15x1.40mm_HandSolder" H 1750 1200 50  0001 C CNN
+F 3 "~" H 1750 1200 50  0001 C CNN
+	1    1750 1200
+	1    0    0    -1  
+$EndComp
+Wire Wire Line
+	1750 1450 1800 1450
+Connection ~ 1750 1450
+Wire Wire Line
+	1750 1450 1750 1300
+$Comp
+L power:+5V #PWR0110
+U 1 1 63CC27F1
+P 1750 1050
+F 0 "#PWR0110" H 1750 900 50  0001 C CNN
+F 1 "+5V" H 1765 1223 50  0000 C CNN
+F 2 "" H 1750 1050 50  0001 C CNN
+F 3 "" H 1750 1050 50  0001 C CNN
+	1    1750 1050
+	1    0    0    -1  
+$EndComp
+Wire Wire Line
+	1700 1450 1750 1450
+Wire Wire Line
+	1000 1450 1300 1450
+$Comp
+L power:GND #PWR0109
+U 1 1 63CC0CE0
+P 1000 1450
+F 0 "#PWR0109" H 1000 1200 50  0001 C CNN
+F 1 "GND" H 1005 1277 50  0000 C CNN
+F 2 "" H 1000 1450 50  0001 C CNN
+F 3 "" H 1000 1450 50  0001 C CNN
+	1    1000 1450
+	1    0    0    -1  
+$EndComp
+$Comp
+L Switch:SW_Push SW1
+U 1 1 63CC0865
+P 1500 1450
+F 0 "SW1" H 1500 1735 50  0000 C CNN
+F 1 "SW_Push" H 1500 1644 50  0000 C CNN
+F 2 "random-keyboard-parts:SKQG-1155865" H 1500 1650 50  0001 C CNN
+F 3 "~" H 1500 1650 50  0001 C CNN
+	1    1500 1450
+	1    0    0    -1  
+$EndComp
+Text GLabel 1800 1450 2    50   Input ~ 0
+RESET
+Text GLabel 2200 1950 0    50   Input ~ 0
+RESET
+Wire Wire Line
+	1350 4250 1550 4250
+Wire Wire Line
+	1350 4050 1550 4050
+$Comp
+L Device:C_Small C5
+U 1 1 63CB55B6
+P 1350 4150
+F 0 "C5" H 1442 4196 50  0000 L CNN
+F 1 "0.1uF" H 1442 4105 50  0000 L CNN
+F 2 "Capacitor_SMD:C_0805_2012Metric_Pad1.15x1.40mm_HandSolder" H 1350 4150 50  0001 C CNN
+F 3 "~" H 1350 4150 50  0001 C CNN
+	1    1350 4150
+	1    0    0    -1  
+$EndComp
 $EndSCHEMATC
